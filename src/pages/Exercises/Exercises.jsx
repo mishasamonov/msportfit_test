@@ -31,7 +31,7 @@ function Exercises() {
         <div className="exercises__header">
           <div>
             <p className="exercises__eyebrow">Каталог</p>
-            <h2>Вправи</h2>
+            <h1>Вправи</h1>
             <p className="exercises__subtitle">Фільтруйте за м&apos;язами, обладнанням або складністю.</p>
           </div>
           <SearchInput value={search} onChange={setSearch} placeholder="Пошук вправи..." />
