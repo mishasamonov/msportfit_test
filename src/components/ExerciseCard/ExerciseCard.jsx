@@ -6,7 +6,7 @@ function ExerciseCard({ exercise }) {
   return (
     <Link to={`/exercises/${exercise.id}`} className="exercise-card">
       <div className="exercise-card__top">
-        <h3>{exercise.title}</h3>
+        <h3 role="heading" aria-level="2">{exercise.title}</h3>
         <Badge label={exercise.muscleGroup} />
       </div>
       <p className="exercise-card__description">{exercise.shortDescription}</p>
