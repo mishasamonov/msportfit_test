@@ -1,0 +1,38 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3;
+
+  &__item {
+    @include card;
+  }
+
+  &__header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: $color-text-primary;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__content {
+    margin-top: $spacing-3;
+    color: $color-text-secondary;
+    line-height: 1.5;
+  }
+
+  &__chevron {
+    color: $color-accent;
+    font-size: $font-size-xl;
+  }
+}
+
+

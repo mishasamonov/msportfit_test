@@ -1,0 +1,27 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.search-input {
+  display: flex;
+  align-items: center;
+  gap: $spacing-3;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  padding: $spacing-3 $spacing-4;
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: $color-text-primary;
+    font-size: $font-size-base;
+    outline: none;
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+}
+
+

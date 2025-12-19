@@ -1,0 +1,53 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.exercises {
+  padding: $spacing-8 0 $spacing-16;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-4;
+    margin-bottom: $spacing-6;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__eyebrow {
+    color: $color-text-muted;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: $font-weight-semibold;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: $spacing-2 0;
+  }
+
+  &__subtitle {
+    color: $color-text-secondary;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $spacing-4;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $spacing-4;
+  }
+}
+
+

@@ -1,0 +1,22 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.footer {
+  border-top: 1px solid $color-border;
+  padding: $spacing-6 0;
+  background: $color-bg-secondary;
+
+  &__inner {
+    @include flex-between;
+    gap: $spacing-4;
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+  }
+
+  &__brand {
+    color: $color-text-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+

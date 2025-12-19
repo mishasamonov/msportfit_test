@@ -1,0 +1,38 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.program-card {
+  @include card;
+  @include card-hover;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-4;
+  color: $color-text-primary;
+
+  h3 {
+    font-size: $font-size-xl;
+  }
+
+  &__header {
+    @include flex-between;
+    gap: $spacing-4;
+  }
+
+  &__description {
+    color: $color-text-secondary;
+  }
+
+  &__meta {
+    display: flex;
+    gap: $spacing-4;
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+
+    @include tablet {
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+  }
+}
+
+

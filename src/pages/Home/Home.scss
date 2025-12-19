@@ -1,0 +1,67 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.home {
+  &__hero {
+    padding: $spacing-20 0 $spacing-16;
+    background: linear-gradient(180deg, rgba(249, 115, 22, 0.12) 0%, rgba(13, 13, 13, 0) 40%), $color-bg-primary;
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      line-height: 1.1;
+      margin-top: $spacing-3;
+
+      span {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__hero-inner {
+    max-width: 840px;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+  }
+
+  &__eyebrow {
+    color: $color-text-muted;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__subtitle {
+    color: $color-text-secondary;
+    font-size: $font-size-lg;
+    max-width: 720px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-3;
+    flex-wrap: wrap;
+  }
+
+  &__info {
+    padding: $spacing-10 0 $spacing-16;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: $spacing-4;
+  }
+
+  &__card {
+    @include card;
+    h3 {
+      margin-bottom: $spacing-2;
+    }
+    p {
+      color: $color-text-secondary;
+    }
+  }
+}
+
+

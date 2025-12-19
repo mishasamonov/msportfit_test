@@ -1,0 +1,33 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.tabs {
+  display: inline-flex;
+  gap: $spacing-2;
+  background: $color-bg-secondary;
+  padding: $spacing-2;
+  border-radius: $radius-full;
+  border: 1px solid $color-border;
+
+  &__item {
+    border: none;
+    background: transparent;
+    color: $color-text-secondary;
+    padding: $spacing-2 $spacing-4;
+    border-radius: $radius-full;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &--active {
+      background: $color-accent;
+      color: $color-text-primary;
+    }
+  }
+
+  &__icon {
+    margin-right: $spacing-2;
+  }
+}
+
+

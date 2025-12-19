@@ -1,0 +1,49 @@
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import './Header.scss';
+
+const navLinks = [
+  { to: '/programs', label: 'Програми' },
+  { to: '/exercises', label: 'Вправи' },
+  { to: '/calculators', label: 'Калькулятори' },
+  { to: '/products', label: 'Продукти' },
+  { to: '/faq', label: 'FAQ' },
+];
+
+function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  return (
+    <header className="header">
+      <div className="container header__inner">
+        <div className="header__logo" onClick={() => navigate('/')}>
+          <svg className="header__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.5 2C6.22386 2 6 2.22386 6 2.5V5H4C3.44772 5 3 5.44772 3 6V8C3 8.55228 3.44772 9 4 9H6V15H4C3.44772 15 3 15.4477 3 16V18C3 18.5523 3.44772 19 4 19H6V21.5C6 21.7761 6.22386 22 6.5 22C6.77614 22 7 21.7761 7 21.5V19H9C9.55228 19 10 18.5523 10 18V16C10 15.4477 9.55228 15 9 15H7V9H9C9.55228 9 10 8.55228 10 8V6C10 5.44772 9.55228 5 9 5H7V2.5C7 2.22386 6.77614 2 6.5 2Z" fill="#f97316"/>
+            <path d="M17.5 2C17.2239 2 17 2.22386 17 2.5V5H15C14.4477 5 14 5.44772 14 6V8C14 8.55228 14.4477 9 15 9H17V15H15C14.4477 15 14 15.4477 14 16V18C14 18.5523 14.4477 19 15 19H17V21.5C17 21.7761 17.2239 22 17.5 22C17.7761 22 18 21.7761 18 21.5V19H20C20.5523 19 21 18.5523 21 18V16C21 15.4477 20.5523 15 20 15H18V9H20C20.5523 9 21 8.55228 21 8V6C21 5.44772 20.5523 5 20 5H18V2.5C18 2.22386 17.7761 2 17.5 2Z" fill="#f97316"/>
+          </svg>
+          <span className="header__brand">MSportFit</span>
+        </div>
+        <nav className="header__nav">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => `header__link ${isActive ? 'header__link--active' : ''}`}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+        <button
+          className={`header__cta ${location.pathname === '/login' ? 'header__cta--active' : ''}`}
+          onClick={() => navigate('/login')}
+        >
+          Увійти
+        </button>
+      </div>
+    </header>
+  );
+}
+
+export default Header;
+

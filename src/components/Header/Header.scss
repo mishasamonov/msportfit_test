@@ -1,0 +1,72 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(13, 13, 13, 0.9);
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include flex-between;
+    height: 72px;
+    gap: $spacing-6;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-2;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xl;
+    cursor: pointer;
+    color: $color-text-primary;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-5;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $color-text-secondary;
+    font-weight: $font-weight-medium;
+    padding: $spacing-2 0;
+    border-bottom: 2px solid transparent;
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+
+    &--active {
+      color: $color-text-primary;
+      border-color: $color-accent;
+    }
+  }
+
+  &__cta {
+    @include button-secondary;
+    border: 1px solid $color-accent;
+    padding: $spacing-2 $spacing-4;
+
+    &--active,
+    &:hover {
+      background: $color-accent;
+      color: $color-text-primary;
+    }
+  }
+}
+

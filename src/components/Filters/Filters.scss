@@ -1,0 +1,53 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-5;
+  background: $color-bg-secondary;
+  border: 1px solid $color-border;
+  border-radius: $radius-xl;
+  padding: $spacing-5;
+  position: sticky;
+  top: 96px;
+
+  @include tablet {
+    position: static;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+
+  &__label {
+    font-weight: $font-weight-semibold;
+  }
+
+  &__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+  }
+
+  &__chip {
+    border: 1px solid $color-border;
+    background: $color-bg-card;
+    color: $color-text-secondary;
+    padding: $spacing-2 $spacing-3;
+    border-radius: $radius-full;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &--active,
+    &:hover {
+      background: $color-accent-light;
+      color: $color-accent;
+      border-color: $color-accent;
+    }
+  }
+}
+
+

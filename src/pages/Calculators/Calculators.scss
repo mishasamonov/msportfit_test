@@ -1,0 +1,103 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.calculators {
+  padding: $spacing-8 0 $spacing-16;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-4;
+    margin-bottom: $spacing-6;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__eyebrow {
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: $spacing-2 0;
+  }
+
+  &__subtitle {
+    color: $color-text-secondary;
+  }
+
+  &__body {
+    display: grid;
+    gap: $spacing-4;
+  }
+}
+
+.calc-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-4;
+  @include card;
+
+  &__form {
+    display: grid;
+    gap: $spacing-3;
+
+    label {
+      display: grid;
+      gap: $spacing-2;
+      color: $color-text-secondary;
+      font-size: $font-size-sm;
+    }
+
+    input,
+    select {
+      @include input-base;
+    }
+  }
+
+  &__result {
+    background: $color-bg-secondary;
+    border: 1px solid $color-border;
+    border-radius: $radius-lg;
+    padding: $spacing-4;
+    display: grid;
+    gap: $spacing-3;
+  }
+
+  &__result-box {
+    display: grid;
+    gap: $spacing-2;
+  }
+
+  &__value {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-semibold;
+  }
+
+  &__label {
+    color: $color-text-secondary;
+  }
+
+  &__hint {
+    color: $color-text-muted;
+  }
+
+  &__macros {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: $spacing-3;
+
+    span {
+      color: $color-text-secondary;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+

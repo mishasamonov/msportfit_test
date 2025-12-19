@@ -1,0 +1,103 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.program-details {
+  padding: $spacing-8 0 $spacing-16;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+    margin-bottom: $spacing-6;
+  }
+
+  &__back {
+    background: none;
+    border: none;
+    color: $color-text-secondary;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+
+  &__eyebrow {
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: $font-weight-semibold;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    margin: $spacing-2 0;
+  }
+
+  &__subtitle {
+    color: $color-text-secondary;
+  }
+
+  &__chips {
+    display: flex;
+    gap: $spacing-2;
+    flex-wrap: wrap;
+    margin-top: $spacing-3;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-3;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-4;
+  }
+
+  &__panel {
+    @include card;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+
+    p {
+      color: $color-text-secondary;
+    }
+  }
+
+  &__equipment {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+  }
+
+  &__days {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-2;
+
+    li {
+      border-bottom: 1px solid $color-border;
+      padding-bottom: $spacing-2;
+    }
+  }
+
+  &__day-title {
+    font-weight: $font-weight-semibold;
+  }
+
+  &__exercise-list {
+    color: $color-text-secondary;
+    font-size: $font-size-sm;
+  }
+
+  &__empty {
+    padding: $spacing-8 0;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-3;
+  }
+}
+
+

@@ -1,0 +1,44 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.auth {
+  padding: $spacing-12 0;
+
+  &__card {
+    max-width: 480px;
+    @include card;
+    display: grid;
+    gap: $spacing-4;
+  }
+
+  &__form {
+    display: grid;
+    gap: $spacing-3;
+
+    label {
+      display: grid;
+      gap: $spacing-2;
+      color: $color-text-secondary;
+      font-size: $font-size-sm;
+    }
+
+    input {
+      @include input-base;
+    }
+  }
+
+  &__error {
+    color: $color-error;
+    font-size: $font-size-sm;
+  }
+
+  &__hint {
+    color: $color-text-secondary;
+
+    a {
+      color: $color-accent;
+    }
+  }
+}
+
+

@@ -1,0 +1,18 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.badge {
+  @include badge;
+
+  &--accent {
+    background: $color-accent-light;
+    color: $color-accent;
+  }
+
+  &--muted {
+    background: $color-bg-secondary;
+    color: $color-text-secondary;
+  }
+}
+
+

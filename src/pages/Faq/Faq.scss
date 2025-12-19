@@ -1,0 +1,22 @@
+@use '../../styles/_variables.scss' as *;
+@use '../../styles/_mixins.scss' as *;
+
+.faq {
+  padding: $spacing-8 0 $spacing-16;
+
+  &__header {
+    margin-bottom: $spacing-6;
+  }
+
+  &__eyebrow {
+    color: $color-text-muted;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+}
+
+
